@@ -1,0 +1,37 @@
+{
+    "schemaVersion": 1,
+    "id": "villagertweaks",
+    "version": "${version}",
+    "name": "Villager Tweaks",
+    "description": "Some minor adjustments to villager interactions to ease a few headaches.",
+    "authors": [
+        "chimericdream"
+    ],
+    "contact": {
+        "homepage": "https://fabricmc.net/",
+        "sources": "https://github.com/chimericdream/villagertweaks/"
+    },
+    "license": "MIT",
+    "icon": "assets/villagertweaks/logo.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "com.chimericdream.villagertweaks.VillagerTweaksMod"
+        ],
+        "modmenu": [
+            "com.chimericdream.villagertweaks.config.ModMenuIntegration"
+        ]
+    },
+    "mixins": [
+        "villagertweaks.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.14.5",
+        "minecraft": "~1.19",
+        "java": ">=17",
+        "cloth-config": ">=7.0.65"
+    },
+    "recommends": {
+        "modmenu": "*"
+    }
+}

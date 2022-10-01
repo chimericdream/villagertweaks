@@ -1,0 +1,9 @@
+{
+    "text.autoconfig.villagertweaks.title":  "VillagerTweaks Configuration",
+    "text.autoconfig.villagertweaks.option.reset": "Restore Defaults",
+    "text.autoconfig.villagertweaks.option.enableMaxTradeOverride": "Override Max Trades",
+    "text.autoconfig.villagertweaks.option.maxTradesOverrideAmount": "Max Trade Count (-1 = \"infinite\")",
+    "text.autoconfig.villagertweaks.option.enableConversionTimeOverride": "Override Zombie Villager Cure Time",
+    "text.autoconfig.villagertweaks.option.conversionTime": "Zombie Villager Cure Time (in ticks)",
+    "text.autoconfig.villagertweaks.option.enableDemandBonusOverride": "Disable Demand Modifier for Trades"
+}
