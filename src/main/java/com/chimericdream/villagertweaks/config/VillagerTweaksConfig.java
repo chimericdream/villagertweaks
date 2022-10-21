@@ -14,6 +14,7 @@ public class VillagerTweaksConfig implements ConfigData {
     public boolean enableConversionTimeOverride = false;
     public int conversionTime = 3600;
     public boolean enableDemandBonusOverride = false;
+    public boolean enableEmeraldTemptation = false;
 
     public void validatePostLoad() {
         if (this.conversionTime < 1) {

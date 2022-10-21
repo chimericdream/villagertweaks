@@ -17,6 +17,7 @@ public class ConfigManager {
         config.enableConversionTimeOverride = false;
         config.conversionTime = 3600;
         config.enableDemandBonusOverride = false;
+        config.enableEmeraldTemptation = false;
     };
 
     public static void registerAutoConfig() {
