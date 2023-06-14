@@ -6,5 +6,7 @@
     "text.autoconfig.villagertweaks.option.enableConversionTimeOverride": "Override Zombie Villager Cure Time",
     "text.autoconfig.villagertweaks.option.conversionTime": "Zombie Villager Cure Time (in ticks)",
     "text.autoconfig.villagertweaks.option.enableDemandBonusOverride": "Disable Demand Modifier for Trades",
-    "text.autoconfig.villagertweaks.option.enableEmeraldTemptation": "Villagers Follow Emerald Blocks/Ore"
+    "text.autoconfig.villagertweaks.option.enableEmeraldTemptation": "Villagers Follow Emerald Blocks/Ore",
+    "text.autoconfig.villagertweaks.option.enableGlobalReputation": "Share Reputation Across All Players",
+    "text.autoconfig.villagertweaks.option.enableBadReputation": "Negative Actions Affect Reputation"
 }

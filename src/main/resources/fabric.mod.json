@@ -25,6 +25,7 @@
     "mixins": [
         "villagertweaks.mixins.json"
     ],
+    "accessWidener": "villagertweaks.accesswidener",
     "depends": {
         "fabricloader": ">=0.14.21",
         "minecraft": "~1.20",

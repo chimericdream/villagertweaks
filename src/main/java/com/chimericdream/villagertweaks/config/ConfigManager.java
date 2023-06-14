@@ -18,6 +18,8 @@ public class ConfigManager {
         config.conversionTime = 3600;
         config.enableDemandBonusOverride = false;
         config.enableEmeraldTemptation = false;
+        config.enableGlobalReputation = false;
+        config.enableBadReputation = true;
     };
 
     public static void registerAutoConfig() {
