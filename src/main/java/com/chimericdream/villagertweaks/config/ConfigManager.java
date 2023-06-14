@@ -20,6 +20,7 @@ public class ConfigManager {
         config.enableEmeraldTemptation = false;
         config.enableGlobalReputation = false;
         config.enableBadReputation = true;
+        config.forceVillagerConversion = true;
     };
 
     public static void registerAutoConfig() {

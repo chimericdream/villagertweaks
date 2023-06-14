@@ -7,6 +7,7 @@
         "VTEmeraldTemptationMixin",
         "VTTradeOfferMixin",
         "VTVillagerEntityMixin",
+        "VTZombieEntityMixin",
         "VTZombieVillagerEntityMixin"
     ],
     "client": [

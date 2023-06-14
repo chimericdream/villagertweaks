@@ -8,5 +8,6 @@
     "text.autoconfig.villagertweaks.option.enableDemandBonusOverride": "Disable Demand Modifier for Trades",
     "text.autoconfig.villagertweaks.option.enableEmeraldTemptation": "Villagers Follow Emerald Blocks/Ore",
     "text.autoconfig.villagertweaks.option.enableGlobalReputation": "Share Reputation Across All Players",
-    "text.autoconfig.villagertweaks.option.enableBadReputation": "Negative Actions Affect Reputation"
+    "text.autoconfig.villagertweaks.option.enableBadReputation": "Negative Actions Affect Reputation",
+    "text.autoconfig.villagertweaks.option.forceVillagerConversion": "Zombies Always Convert Villagers"
 }

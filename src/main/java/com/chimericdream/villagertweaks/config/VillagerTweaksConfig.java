@@ -17,6 +17,7 @@ public class VillagerTweaksConfig implements ConfigData {
     public boolean enableEmeraldTemptation = false;
     public boolean enableGlobalReputation = false;
     public boolean enableBadReputation = true;
+    public boolean forceVillagerConversion = false;
 
     public void validatePostLoad() {
         if (this.conversionTime < 1) {
