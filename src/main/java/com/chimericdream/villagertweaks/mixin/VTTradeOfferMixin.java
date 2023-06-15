@@ -16,6 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(TradeOffer.class)
 public class VTTradeOfferMixin {
 	@Shadow private @Final @Mutable int maxUses;
+	@Shadow private @Mutable int uses;
 	@Shadow private int demandBonus;
 	@Shadow private @Final ItemStack sellItem;
 
@@ -50,6 +51,15 @@ public class VTTradeOfferMixin {
 
 		if (config.enableDemandBonusOverride) {
 			this.demandBonus = 0;
+		}
+	}
+
+	@Inject(method = "use", at = @At("TAIL"))
+	public void checkInfiniteUses(CallbackInfo ci) {
+		VillagerTweaksConfig config = ConfigManager.getConfig();
+
+		if (config.enableMaxTradeOverride && config.maxTradesOverrideAmount == -1) {
+			--this.uses;
 		}
 	}
 }
