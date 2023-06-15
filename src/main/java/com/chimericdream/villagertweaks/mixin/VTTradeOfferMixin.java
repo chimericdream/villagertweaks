@@ -31,8 +31,6 @@ public class VTTradeOfferMixin {
 		if (config.enableMaxTradeOverride) {
 			if (config.maxTradesOverrideAmount > -1) {
 				this.maxUses = config.maxTradesOverrideAmount;
-			} else {
-				this.maxUses = 999999;
 			}
 		}
 
