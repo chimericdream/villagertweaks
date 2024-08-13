@@ -3,6 +3,8 @@ package com.chimericdream.villagertweaks.mixin;
 import com.chimericdream.villagertweaks.VillagerTweaksMod;
 import com.chimericdream.villagertweaks.config.ConfigManager;
 import com.chimericdream.villagertweaks.config.VillagerTweaksConfig;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.NbtComponent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityInteraction;
 import net.minecraft.entity.EntityType;
@@ -11,6 +13,7 @@ import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.village.VillageGossipType;
@@ -37,17 +40,15 @@ public abstract class VTVillagerEntityMixin extends MerchantEntity {
     }
 
     @Inject(method = "getReputation", at = @At("HEAD"), cancellable = true)
-    private void injected(CallbackInfoReturnable<Integer> cir) {
+    private void injected(PlayerEntity player, CallbackInfoReturnable<Integer> cir) {
         VillagerTweaksConfig config = ConfigManager.getConfig();
-        if (!config.enableGlobalReputation) {
+        UUID playerId = config.enableGlobalReputation ? GLOBAL_UUID : player.getUuid();
+
+        if (config.enableBadReputation) {
             return;
         }
 
-        if (config.enableBadReputation) {
-            cir.setReturnValue(this.gossip.getReputationFor(GLOBAL_UUID, (t) -> true));
-        } else {
-            cir.setReturnValue(this.gossip.getReputationFor(GLOBAL_UUID, (t) -> t != VillageGossipType.MINOR_NEGATIVE && t != VillageGossipType.MAJOR_NEGATIVE));
-        }
+        cir.setReturnValue(this.gossip.getReputationFor(playerId, (t) -> t != VillageGossipType.MINOR_NEGATIVE && t != VillageGossipType.MAJOR_NEGATIVE));
     }
 
     @Inject(method = "interactMob",at = @At("HEAD"), cancellable = true)
@@ -65,7 +66,12 @@ public abstract class VTVillagerEntityMixin extends MerchantEntity {
                 );
 
                 ItemStack newItemStack = new ItemStack(VillagerTweaksMod.BAGGED_VILLAGER_ITEM);
-                this.writeCustomDataToNbt(newItemStack.getOrCreateNbt());
+                NbtCompound nbt = new NbtCompound();
+                this.writeCustomDataToNbt(nbt);
+                NbtComponent nbtComponent = NbtComponent.of(nbt);
+
+                newItemStack.set(DataComponentTypes.CUSTOM_DATA, nbtComponent);
+
                 player.giveItemStack(newItemStack);
                 itemStack.decrement(1);
                 this.discard();

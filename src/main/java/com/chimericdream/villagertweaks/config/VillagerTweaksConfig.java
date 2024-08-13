@@ -3,7 +3,6 @@ package com.chimericdream.villagertweaks.config;
 import com.chimericdream.villagertweaks.VillagerTweaksMod;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
-import me.shedaniel.autoconfig.annotation.ConfigEntry;
 
 @Config(name = "villagertweaks")
 @Config.Gui.Background("minecraft:textures/block/composter_side.png")
