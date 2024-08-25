@@ -10,5 +10,6 @@
     "text.autoconfig.villagertweaks.option.enableGlobalReputation": "Share Reputation Across All Players",
     "text.autoconfig.villagertweaks.option.enableBadReputation": "Negative Actions Affect Reputation",
     "text.autoconfig.villagertweaks.option.forceVillagerConversion": "Zombies Always Convert Villagers",
+    "text.autoconfig.villagertweaks.option.displayConversionTime": "Display Zombie Villager Cure Time",
     "item.villagertweaks.bagged_villager": "Bagged Villager"
 }

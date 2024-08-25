@@ -17,6 +17,7 @@ public class VillagerTweaksConfig implements ConfigData {
     public boolean enableGlobalReputation = false;
     public boolean enableBadReputation = true;
     public boolean forceVillagerConversion = false;
+    public boolean displayConversionTime = false;
 
     public void validatePostLoad() {
         if (this.conversionTime < 1) {

@@ -21,6 +21,7 @@ public class ConfigManager {
         config.enableGlobalReputation = false;
         config.enableBadReputation = true;
         config.forceVillagerConversion = true;
+        config.displayConversionTime = false;
     };
 
     public static void registerAutoConfig() {
