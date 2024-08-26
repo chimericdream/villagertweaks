@@ -5,6 +5,7 @@ import com.chimericdream.villagertweaks.config.VillagerTweaksConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.ZombieVillagerEntity;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -83,6 +84,23 @@ public abstract class VTZombieVillagerEntityMixin extends Entity {
         }
 
         this.isTimerShowing = false;
+    }
+
+    @Inject(method = "writeCustomDataToNbt", at = @At("TAIL"))
+    private void writePreviousNameToNbt(NbtCompound nbt, CallbackInfo ci) {
+        if (this.prevName != null) {
+            nbt.putString("VTPrevName", Text.Serialization.toJsonString(this.prevName, this.getRegistryManager()));
+            nbt.putBoolean("VTWasPrevNameVisible", this.wasPrevNameVisible);
+        }
+    }
+
+    @Inject(method = "readCustomDataFromNbt", at = @At("TAIL"))
+    private void readPreviousNameFromNbt(NbtCompound nbt, CallbackInfo ci) {
+        if (nbt.contains("VTPrevName")) {
+            this.prevName = Text.Serialization.fromJson(nbt.getString("VTPrevName"), this.getRegistryManager());
+            this.wasPrevNameVisible = nbt.getBoolean("VTWasPrevNameVisible");
+            this.isTimerShowing = true;
+        }
     }
 
     @Unique
