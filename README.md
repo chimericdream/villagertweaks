@@ -1,9 +1,3 @@
-# Fabric Example Mod
+# Archived
 
-## Setup
-
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
-
-## License
-
-This template is available under the MIT license. Feel free to learn from it and incorporate it in your own projects.
+All of my mods have been consolidated into a [single monorepo](https://github.com/chimericdream/minecraft-mods). Please go there for the latest code and/or issues.
